@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>[Serveur] Informations</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/main_style.css">
+        <link rel="icon" href="https://lh5.googleusercontent.com/F1tFbZNKTEjxRKLVfgQ35YXCaI3BY9DktFc8Qh0lam1JwfhCj6pBMCAAT9eMdS0kdybvdkIkMpUED9fopqS1xFvI8cfiZFru">
+    </head>
+
+    <body>
+        <?PHP phpinfo() ?>
+    </body>
+
+</html>

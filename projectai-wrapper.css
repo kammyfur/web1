@@ -1,0 +1,17 @@
+#document .b-agent-demo_result {
+    top: 80px;
+}
+
+#document .b-agent-powered_by {
+    display: none;
+}
+
+iframe {
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: none;
+}

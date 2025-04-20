@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>[Client] Informations</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/main_style.css">
+        <link rel="icon" href="https://lh5.googleusercontent.com/F1tFbZNKTEjxRKLVfgQ35YXCaI3BY9DktFc8Qh0lam1JwfhCj6pBMCAAT9eMdS0kdybvdkIkMpUED9fopqS1xFvI8cfiZFru">
+        <!-- <script type="text/javascript" src="/scripts/jquery.js"></script> -->
+    </head>
+
+    <body>
+        <b><i>Si les informations ne s'affichent pas, vérifiez que vous avez activé JavaScript</i></b><br/><br/>
+        <!-- <script>
+        function refreshConsole() {
+            $.ajax({
+            url: "index.html",
+            success:
+                function(retour){
+                $('console').html(retour);
+            }
+        });
+        console.info("Rafraichi le contenu")
+        }
+        </script> -->
+
+        <div class="console">
+            <script>
+              
+                var nVer = navigator.appVersion;
+                var nAgt = navigator.userAgent;
+                var browserName  = navigator.appName;
+                var fullVersion  = ''+parseFloat(navigator.appVersion); 
+                var majorVersion = parseInt(navigator.appVersion,10);
+                var nameOffset,verOffset,ix;
+
+                // In Opera, the true version is after "Opera" or after "Version"
+                if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+                browserName = "Opera";
+                fullVersion = nAgt.substring(verOffset+6);
+                if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+                    fullVersion = nAgt.substring(verOffset+8);
+                }
+                // In MSIE, the true version is after "MSIE" in userAgent
+                else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+                browserName = "Microsoft Internet Explorer";
+                fullVersion = nAgt.substring(verOffset+5);
+                }
+                // In Chrome, the true version is after "Chrome" 
+                else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+                browserName = "Google Chrome";
+                fullVersion = nAgt.substring(verOffset+7);
+                }
+                // In Safari, the true version is after "Safari" or after "Version" 
+                else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+                browserName = "Apple Safari";
+                fullVersion = nAgt.substring(verOffset+7);
+                if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+                    fullVersion = nAgt.substring(verOffset+8);
+                }
+                // In Firefox, the true version is after "Firefox" 
+                else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+                    browserName = "Mozilla Firefox";
+                    fullVersion = nAgt.substring(verOffset+8);
+                }
+                // In most other browsers, "name/version" is at the end of userAgent 
+                else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < (verOffset=nAgt.lastIndexOf('/')) ) {
+                    browserName = nAgt.substring(nameOffset,verOffset);
+                    fullVersion = nAgt.substring(verOffset+1);
+                    if (browserName.toLowerCase()==browserName.toUpperCase()) {
+                    browserName = navigator.appName;
+                    }
+                }
+                // trim the fullVersion string at semicolon/space if present
+                if ((ix=fullVersion.indexOf(";"))!=-1)
+                    fullVersion=fullVersion.substring(0,ix);
+                if ((ix=fullVersion.indexOf(" "))!=-1)
+                    fullVersion=fullVersion.substring(0,ix);
+
+                majorVersion = parseInt(''+fullVersion,10);
+                if (isNaN(majorVersion)) {
+                    fullVersion  = ''+parseFloat(navigator.appVersion); 
+                    majorVersion = parseInt(navigator.appVersion,10);
+                }
+
+                document.write('<b>Navigateur</b> : '+browserName+'<br>'
+                            +'<b>Version du navigateur</b> : '+fullVersion+'<br>'
+                            +'<b>Agent de navigation</b> : '+nAgt+'<br>'
+                            +'<b>Do Not Track</b> : '+navigator.doNotTrack+'<br>'
+                            +'<b>Processeur et Système</b> : '+navigator.oscpu+'<br>'
+                            +'<b>Cookies activés</b> : '+navigator.cookieEnabled+'<br>'
+                            +'<b>Langue du navigateur</b> : '+navigator.language+'<br>'
+                            +'<b>Plate-forme</b> : '+navigator.platform+'<br>'
+                            +'<b>Moteur de rendu</b> : '+navigator.product+' '+navigator.productSub+'<br>'
+                            +'<b>Nom du serveur</b> : '+location.hostname+'<br>'
+                            +'<b>Page actuelle</b> : '+location.href+'<br>'
+                            +'<b>Protocole de liaison</b> : '+location.protocol+'<br>'
+                            +"<b>Chemin d'accès</b> : "+location.pathname+'<br>'
+                            +"<b>Taille de l'écran</b> : "+screen.height+'x'+screen.width+'<br>'
+                            +"<b>Plein écran</b> : "+window.fullScreen+'<br>'
+                            +"<br><a href='javascript:window.print();'>Imprimer cette page</a>")
+                // setInterval("refreshConsole();",1000);
+            </script>
+        </div>
+    </body>
+
+</html>
